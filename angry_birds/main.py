@@ -8,8 +8,6 @@ from angry_birds.button import Button
 from angry_birds.home import HomeScreen
 from angry_birds.game_over import GameOverScreen
 from angry_birds.about import AboutScreen
-from angry_birds.main import run_game
-from angry_birds.main import main
 
 pygame.init()
 
