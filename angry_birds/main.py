@@ -1,6 +1,5 @@
 import pygame
 import sys
-import random
 from bird import Bird
 from button import Button
 from force_visualizer import ForceVisualizer
