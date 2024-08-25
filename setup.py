@@ -7,7 +7,6 @@ setup(
     include_package_data=True,
     install_requires=[
         'pygame',
-        # Adicione outros pacotes necessários aqui
     ],
     entry_points={
         'console_scripts': [
@@ -17,10 +16,10 @@ setup(
     package_data={
         'angry_birds': ['images/*.png'],
     },
-    author='Seu Nome',
-    author_email='seu.email@example.com',
+    author='Pedro Ricardo Fardin',
+    author_email='pedrorf1@al.insper.edu.br',
     description='Um jogo inspirado no Angry Birds',
-    url='https://github.com/pedrofardin/repositorio',  # Substitua pelo URL do seu repositório
+    url='https://github.com/pedrofardin/aps_1_alglin',  # Substitua pelo URL do seu repositório
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',

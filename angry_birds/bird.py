@@ -1,7 +1,5 @@
 import pygame
 import math
-import pygame
-import math
 
 class Bird(pygame.sprite.Sprite):
     def __init__(self, x, y, images, mass=1.0):

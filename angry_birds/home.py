@@ -1,6 +1,6 @@
 import pygame
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
-from button import Button
+from angry_birds.button import Button
+from angry_birds.constants import SCREEN_WIDTH, SCREEN_HEIGHT
 import sys
 
 class HomeScreen:
