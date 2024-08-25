@@ -1,42 +1,66 @@
 import pygame
-import pymunk
+import math
+import pygame
+import math
 
 class Bird(pygame.sprite.Sprite):
-    def __init__(self, space):
+    def __init__(self, x, y, images, mass=1.0):
         super().__init__()
-        self.body = pymunk.Body(1, 100)
-        self.shape = pymunk.Circle(self.body, 20)
-        self.shape.elasticity = 0.95
-        self.shape.friction = 1.0
-        space.add(self.body, self.shape)
-        
-        self.image = pygame.Surface((40, 40), pygame.SRCALPHA)
-        self.rect = self.image.get_rect()
-        self.launched = False
+        self.images = images if isinstance(images, list) else [images]
+        self.current_frame = 0
+        self.image = self.images[self.current_frame]
 
-    def launch(self, x_vel, y_vel):
-        self.body.velocity = (x_vel, y_vel)
-        self.launched = True
+        
+        self.rect = self.image.get_rect()
+        self.rect.center = (x, y)
+        self.velocity = [0, 0]
+        self.dragging = False
+        self.not_released = True
+        
+        self.gravity = 2
+        self.mass = mass  # Default mass of the bird
+
+        self.drag_start_pos = (0, 0)
+        self.max_drag_distance = 150
 
     def update(self):
-        self.rect.center = self.body.position
+        if self.dragging:
+            mouse_pos = pygame.mouse.get_pos()
+            # calcula a distância entre a posição do mouse e a posição inicial do arrasto
+            distance = ((mouse_pos[0] - self.drag_start_pos[0]) ** 2 + (mouse_pos[1] - self.drag_start_pos[1]) ** 2) ** 0.5
+            if distance > self.max_drag_distance:
+                # Limit the drag distance
 
-class RedBird(Bird):
-    def __init__(self, space):
-        super().__init__(space)
-        self.image = pygame.image.load("red_bird.png")
-        self.image = pygame.transform.scale(self.image, (40, 40))
+                # funcao que calcula o angulo em radianos pela arcotangente de y e x
+                angle = math.atan2(mouse_pos[1] - self.drag_start_pos[1], mouse_pos[0] - self.drag_start_pos[0]) 
+                mouse_pos = (
+                    self.drag_start_pos[0] + self.max_drag_distance * math.cos(angle),
+                    self.drag_start_pos[1] + self.max_drag_distance * math.sin(angle)
+                )
 
-class BlueBird(Bird):
-    def __init__(self, space):
-        super().__init__(space)
-        self.image = pygame.image.load("blue_bird.png").convert_alpha()
-        self.image = pygame.transform.scale(self.image, (40, 40))
+            self.rect.center = mouse_pos
+        else:
+            self.rect.x += self.velocity[0]
+            self.rect.y += self.velocity[1]
 
-    def special_ability(self):
-        new_birds = [BlueBird(self.body._space) for _ in range(2)]
-        for new_bird in new_birds:
-            new_bird.body.position = self.body.position
-            new_bird.body.velocity = (self.body.velocity.x * 0.8, self.body.velocity.y * 1.2)
-            new_bird.launched = True
-        return new_birds
+        if len(self.images) > 1:
+            self.image = self.images[self.current_frame]
+
+    def start_drag(self):
+        self.dragging = True
+        self.drag_start_pos = self.rect.center
+
+    def end_drag(self):
+        self.dragging = False
+        self.not_released = False
+        mouse_pos = pygame.mouse.get_pos()
+
+        # Calcula a direção e a velocidade do pássaro
+        direction = math.atan2(self.drag_start_pos[1] - mouse_pos[1], self.drag_start_pos[0] - mouse_pos[0])
+        speed = ((self.drag_start_pos[0] - mouse_pos[0]) ** 2 + (self.drag_start_pos[1] - mouse_pos[1]) ** 2) ** 0.5 / 10
+        #divisão por 10 para ajustar a velocidade.
+
+        self.velocity = [speed * math.cos(direction), speed * math.sin(direction)]
+
+    def hit_enemy(self, score):
+        return score + 100 
