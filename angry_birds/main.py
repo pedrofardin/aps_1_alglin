@@ -16,7 +16,7 @@ pygame.display.set_caption("Angry Birds")
 
 # Use pkg_resources to load images from the package
 player_bird_images = [
-    pygame.transform.scale(pygame.image.load('angry_birds/images/player_bird.png'), (75, 75)),
+    pygame.transform.scale(pygame.image.load('APS_1_ALGLIN/angry_birds/images/player_bird.png'), (75, 75)),
     pygame.transform.scale(pygame.image.load('angry_birds/images/red_bird.png'), (75, 75))
 ]
 pig_image = pygame.transform.scale(pygame.image.load('angry_birds/images/enemy_bird.png'), (75, 75))
