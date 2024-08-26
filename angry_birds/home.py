@@ -9,7 +9,7 @@ class HomeScreen:
         self.screen = screen
         
         # Load the background image for the home screen
-        self.background_image = pygame.transform.scale(pygame.image.load('angry_birds/images/background.png'), (SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.background_image = pygame.transform.scale(pygame.image.load('angry_birds/images/pixelcut-export.png'), (SCREEN_WIDTH, SCREEN_HEIGHT))
 
         # Load button images and calculate their positions to place them next to each other
         start_button_image = pygame.image.load('angry_birds/images/start_button.png')
