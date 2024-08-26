@@ -19,7 +19,7 @@ base_path = os.path.dirname(__file__)
 
 # Use pkg_resources to load images from the package
 player_bird_images = [
-    pygame.transform.scale(pygame.image.load(os.path.join(base_path,'pimages/layer_bird.png')), (75, 75)),
+    pygame.transform.scale(pygame.image.load(os.path.join(base_path,'images/layer_bird.png')), (75, 75)),
     pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'images/red_bird.png')), (75, 75))
 ]
 pig_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'images/enemy_bird.png')), (50, 50))
