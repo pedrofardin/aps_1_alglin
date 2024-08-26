@@ -24,7 +24,7 @@ player_bird_images = [
 ]
 pig_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'enemy_bird.png')), (50, 50))
 
-slingshot_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'slingshot.png')), (100, 100))
+slingshot_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'estilingue.png')), (100, 100))
 
 background_image = pygame.image.load(os.path.join(base_path, 'background.png'))
 background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
