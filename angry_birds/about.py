@@ -1,6 +1,6 @@
 import pygame
 import sys
-from angry_birds.constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class AboutScreen:
     def __init__(self, screen):
