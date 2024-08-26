@@ -1,6 +1,6 @@
 import pygame
 import sys
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from angry_birds.constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class GameOverScreen:
     def __init__(self, screen):
