@@ -14,7 +14,7 @@ setup(
         ],
     },
     package_data={
-        'angry_birds': ['*.png'],
+        'angry_birds': ['images/*.png'],
     },
     author='Pedro Ricardo Fardin',
     author_email='pedrorf1@al.insper.edu.br',
