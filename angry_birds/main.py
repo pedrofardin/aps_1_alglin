@@ -1,4 +1,3 @@
-import pkg_resources
 import pygame
 import sys
 from angry_birds.bird import Bird
@@ -17,19 +16,19 @@ pygame.display.set_caption("Angry Birds")
 
 # Use pkg_resources to load images from the package
 player_bird_images = [
-    pygame.transform.scale(pygame.image.load(pkg_resources.resource_filename('angry_birds', 'images/player_bird.png')), (75, 75)),
-    pygame.transform.scale(pygame.image.load(pkg_resources.resource_filename('angry_birds', 'images/red_bird.png')), (75, 75))
+    pygame.transform.scale(pygame.image.load('angry_birds/images/player_bird.png'), (75, 75)),
+    pygame.transform.scale(pygame.image.load('angry_birds/images/red_bird.png'), (75, 75))
 ]
-pig_image = pygame.transform.scale(pygame.image.load(pkg_resources.resource_filename('angry_birds', 'images/enemy_bird.png')), (75, 75))
+pig_image = pygame.transform.scale(pygame.image.load('angry_birds/images/enemy_bird.png'), (75, 75))
 
-slingshot_image = pygame.transform.scale(pygame.image.load(pkg_resources.resource_filename('angry_birds', 'images/estilingue.png')), (60, 100))
+slingshot_image = pygame.transform.scale(pygame.image.load('angry_birds/images/estilingue.png'), (60, 100))
 
-background_image = pygame.image.load(pkg_resources.resource_filename('angry_birds', 'images/background.png'))
+background_image = pygame.image.load('angry_birds/images/background.png')
 background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
 player_bird = Bird(SCREEN_WIDTH // 5, SCREEN_HEIGHT * 4 // 5, player_bird_images)
 
-refresh_button = Button(10, 10, pygame.image.load(pkg_resources.resource_filename('angry_birds', 'images/refresh_button.png')), "refresh")
+refresh_button = Button(10, 10, pygame.image.load('angry_birds/images/refresh_button.png'), "refresh")
 
 
 moon_positions = [
