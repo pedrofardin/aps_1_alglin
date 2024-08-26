@@ -22,7 +22,7 @@ player_bird_images = [
     pygame.transform.scale(pygame.image.load(os.path.join(base_path,'images/player_bird.png')), (75, 75)),
     pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'images/red_bird.png')), (75, 75))
 ]
-pig_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'images/enemy_bird.png')), (50, 50))
+pig_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'images/enemy_bird.png')), (75, 75))
 
 slingshot_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'images/estilingue.png')), (100, 100))
 
