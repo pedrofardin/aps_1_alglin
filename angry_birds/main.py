@@ -1,13 +1,13 @@
 import pygame
 import sys
-from angry_birds.bird import Bird
-from angry_birds.moon import Moon
-from angry_birds.force_visualizer import ForceVisualizer
-from angry_birds.constants import *
-from angry_birds.button import Button
-from angry_birds.home import HomeScreen
-from angry_birds.game_over import GameOverScreen
-from angry_birds.about import AboutScreen
+from bird import Bird
+from moon import Moon
+from force_visualizer import ForceVisualizer
+from constants import *
+from button import Button
+from home import HomeScreen
+from game_over import GameOverScreen
+from about import AboutScreen
 
 pygame.init()
 
