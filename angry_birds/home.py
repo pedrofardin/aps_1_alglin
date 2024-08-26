@@ -7,9 +7,9 @@ from angry_birds.constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class HomeScreen:
     def __init__(self, screen):
-        background_image_path = os.path.join(os.path.dirname(__file__), 'pixelcut-export.png')
-        start_button_image_path = os.path.join(os.path.dirname(__file__), 'start_button.png')
-        about_button_image_path = os.path.join(os.path.dirname(__file__), 'about_button.png')
+        background_image_path = os.path.join(os.path.dirname(__file__), 'images/pixelcut-export.png')
+        start_button_image_path = os.path.join(os.path.dirname(__file__), 'images/start_button.png')
+        about_button_image_path = os.path.join(os.path.dirname(__file__), 'images/about_button.png')
 
         self.screen = screen
         

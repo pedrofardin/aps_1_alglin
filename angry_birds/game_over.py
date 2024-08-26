@@ -5,8 +5,8 @@ from angry_birds.constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class GameOverScreen:
     def __init__(self, screen):
-        background_image_path = os.path.join(os.path.dirname(__file__), 'background.png')
-        game_over_image_path = os.path.join(os.path.dirname(__file__), 'game_over.png')
+        background_image_path = os.path.join(os.path.dirname(__file__), 'images/background.png')
+        game_over_image_path = os.path.join(os.path.dirname(__file__), 'images/game_over.png')
 
         self.screen = screen
         self.background_image = pygame.transform.scale(pygame.image.load(background_image_path), (SCREEN_WIDTH, SCREEN_HEIGHT))
