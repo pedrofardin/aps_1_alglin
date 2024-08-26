@@ -1,5 +1,6 @@
 import pygame
 import sys
+import os
 from angry_birds.bird import Bird
 from angry_birds.moon import Moon
 from angry_birds.force_visualizer import ForceVisualizer
@@ -14,12 +15,14 @@ pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Angry Birds")
 
+base_path = os.path.dirname(__file__)
+
 # Use pkg_resources to load images from the package
 player_bird_images = [
-    pygame.transform.scale(pygame.image.load('player_bird.png'), (75, 75)),
-    pygame.transform.scale(pygame.image.load('red_bird.png'), (75, 75))
+    pygame.transform.scale(pygame.image.load(os.path.join(base_path,'player_bird.png')), (75, 75)),
+    pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'red_bird.png')), (75, 75))
 ]
-pig_image = pygame.transform.scale(pygame.image.load('enemy_bird.png'), (75, 75))
+pig_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'pig.png')), (50, 50))
 
 slingshot_image = pygame.transform.scale(pygame.image.load('estilingue.png'), (60, 100))
 
