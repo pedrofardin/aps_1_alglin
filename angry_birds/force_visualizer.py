@@ -1,5 +1,5 @@
 import pygame
-from constants import SCREEN_HEIGHT, SCREEN_WIDTH
+from angry_birds.constants import SCREEN_HEIGHT, SCREEN_WIDTH
 
 class ForceVisualizer:
     def __init__(self, screen, bird):
