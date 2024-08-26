@@ -22,16 +22,16 @@ player_bird_images = [
     pygame.transform.scale(pygame.image.load(os.path.join(base_path,'player_bird.png')), (75, 75)),
     pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'red_bird.png')), (75, 75))
 ]
-pig_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'pig.png')), (50, 50))
+pig_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'enemy_bird.png')), (50, 50))
 
-slingshot_image = pygame.transform.scale(pygame.image.load('estilingue.png'), (60, 100))
+slingshot_image = pygame.transform.scale(pygame.image.load(os.path.join(base_path, 'slingshot.png')), (100, 100))
 
-background_image = pygame.image.load('background.png')
+background_image = pygame.image.load(os.path.join(base_path, 'background.png'))
 background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
 player_bird = Bird(SCREEN_WIDTH // 5, SCREEN_HEIGHT * 4 // 5, player_bird_images)
 
-refresh_button = Button(10, 10, pygame.image.load('refresh_button.png'), "refresh")
+refresh_button = Button(10, 10, pygame.image.load(os.path.join(base_path, 'refresh_button.png')), "refresh")
 
 
 moon_positions = [

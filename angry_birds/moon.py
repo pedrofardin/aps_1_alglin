@@ -1,10 +1,12 @@
 import pygame
 import math
+import os
 
 class Moon(pygame.sprite.Sprite):
     def __init__(self, x, y, mass=2300, radius=60):
         super().__init__()
-        self.image = pygame.transform.scale(pygame.image.load('moon.png'), (radius, radius))
+        image_path = os.path.join(os.path.dirname(__file__), 'moon.png')
+        self.image = pygame.transform.scale(pygame.image.load(image_path), (radius, radius))
         self.rect = self.image.get_rect(center=(x, y))
         self.mass = mass
         self.radius = radius

@@ -1,19 +1,24 @@
 import pygame
 import sys
+import os
 from angry_birds.button import Button
 from angry_birds.constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 
 class HomeScreen:
     def __init__(self, screen):
+        background_image_path = os.path.join(os.path.dirname(__file__), 'pixelcut-export.png')
+        start_button_image_path = os.path.join(os.path.dirname(__file__), 'start_button.png')
+        about_button_image_path = os.path.join(os.path.dirname(__file__), 'about_button.png')
+
         self.screen = screen
         
         # Load the background image for the home screen
-        self.background_image = pygame.transform.scale(pygame.image.load('pixelcut-export.png'), (SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.background_image = pygame.transform.scale(pygame.image.load(background_image_path), (SCREEN_WIDTH, SCREEN_HEIGHT))
 
         # Load button images and calculate their positions to place them next to each other
-        start_button_image = pygame.image.load('start_button.png')
-        about_button_image = pygame.image.load('about_button.png')
+        start_button_image = pygame.image.load(start_button_image_path)
+        about_button_image = pygame.image.load(about_button_image_path)
 
         button_width = start_button_image.get_width()
         button_height = start_button_image.get_height()
