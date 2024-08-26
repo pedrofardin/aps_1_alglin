@@ -4,7 +4,7 @@ import math
 class Moon(pygame.sprite.Sprite):
     def __init__(self, x, y, mass=2300, radius=60):
         super().__init__()
-        self.image = pygame.transform.scale(pygame.image.load("images/moon.png"), (radius, radius))
+        self.image = pygame.transform.scale(pygame.image.load("angry_birds\images\moon.png"), (radius, radius))
         self.rect = self.image.get_rect(center=(x, y))
         self.mass = mass
         self.radius = radius

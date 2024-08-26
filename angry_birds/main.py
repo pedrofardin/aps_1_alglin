@@ -1,6 +1,5 @@
 import pygame
 import sys
-import os
 from angry_birds.bird import Bird
 from angry_birds.moon import Moon
 from angry_birds.force_visualizer import ForceVisualizer
@@ -15,28 +14,18 @@ pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Angry Birds")
 
-current_directory = os.path.dirname("angry_birds")
+player_bird_images = [pygame.transform.scale(pygame.image.load("angry_birds/images/player_bird.png"), (75, 75)),
+                      pygame.transform.scale(pygame.image.load("angry_birds/images/red_bird.png"), (75, 75))]
+pig_image = pygame.transform.scale(pygame.image.load("angry_birds/images/enemy_bird.png"), (75, 75))
 
-# Get the directory of the current script (main.py or wherever this code is running)
-current_directory = os.path.dirname(__file__)
+slingshot_image = pygame.transform.scale(pygame.image.load("angry_birds/images/estilingue.png"), (60, 100))
 
-# Construct the full path to each image
-player_bird_image_path = os.path.join(current_directory, 'images', 'player_bird.png')
-red_bird_image_path = os.path.join(current_directory, 'images', 'red_bird.png')
-pig_image_path = os.path.join(current_directory, 'images', 'enemy_bird.png')
-slingshot_image_path = os.path.join(current_directory, 'images', 'estilingue.png')
-background_image_path = os.path.join(current_directory, 'images', 'background.png')
-refresh_button_image_path = os.path.join(current_directory, 'images', 'refresh_button.png')
+background_image = pygame.image.load("angry_birds/images/background.png")
+background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
-# Load the images
-player_bird_images = [
-    pygame.transform.scale(pygame.image.load(player_bird_image_path), (75, 75)),
-    pygame.transform.scale(pygame.image.load(red_bird_image_path), (75, 75))
-]
-pig_image = pygame.transform.scale(pygame.image.load(pig_image_path), (75, 75))
-slingshot_image = pygame.transform.scale(pygame.image.load(slingshot_image_path), (60, 100))
-background_image = pygame.transform.scale(pygame.image.load(background_image_path), (SCREEN_WIDTH, SCREEN_HEIGHT))
-refresh_button_image = pygame.image.load(refresh_button_image_path)
+player_bird = Bird(SCREEN_WIDTH // 5, SCREEN_HEIGHT * 4 // 5, player_bird_images)
+
+refresh_button = Button(10, 10, pygame.image.load("angry_birds/images/refresh_button.png"), "refresh")
 
 
 moon_positions = [
