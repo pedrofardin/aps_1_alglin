@@ -28,7 +28,8 @@ Este é um jogo inspirado no Angry Birds, desenvolvido em Python usando a biblio
 
 **caso queira desinstalar**
 ```sh
-pip uninstall angry_birds_game
+    pip uninstall angry_birds_game
+```
 
 3. Estrutura do projeto:
     bash
