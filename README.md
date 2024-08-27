@@ -31,8 +31,9 @@ Este é um jogo inspirado no Angry Birds, desenvolvido em Python usando a biblio
     pip uninstall angry_birds_game
 ```
 
-3. Estrutura do projeto:
-    bash
+### Estrutura do projeto:
+
+    ```
     aps_1_alglin/
     │
     ├── angry_birds
